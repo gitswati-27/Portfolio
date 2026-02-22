@@ -1,0 +1,66 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  position: relative;
+  transition: border-color 0.3s, transform 0.3s;
+  overflow: hidden;
+}
+
+/* Accent top bar that expands on hover */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 36px;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover { border-color: var(--accent2); transform: translateY(-5px); }
+.card:hover::before { width: 100%; }
+
+.cat {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.63rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  background: var(--bg3);
+  border-radius: 2px;
+  transition: border-color 0.2s, color 0.2s;
+  cursor: default;
+}
+
+.tag:hover { border-color: var(--accent); color: var(--accent); }

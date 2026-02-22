@@ -1,0 +1,93 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* Photo */
+.imgWrap  { position: relative; }
+
+.photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.photoPlaceholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text2);
+  position: relative;
+}
+
+.photoPlaceholder::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--accent);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.photoPlaceholder small {
+  font-size: 0.6rem;
+  opacity: 0.6;
+}
+
+/* Stat badge */
+.stat {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.statNum {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text2);
+  margin-top: 0.25rem;
+}
+
+/* Text */
+.lead {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.para {
+  color: var(--text2);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}

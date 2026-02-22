@@ -1,0 +1,53 @@
+.wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text2);
+  padding-bottom: 32px;   /* room for the dangling string + bead */
+}
+
+.bulb {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.25s, color 0.25s;
+}
+
+/* Pull animation: bulb moves down slightly */
+.pulling .bulb {
+  transform: translateY(5px);
+}
+
+/* The string */
+.string {
+  position: absolute;
+  top: 26px;
+  width: 2px;
+  height: 18px;
+  background: var(--text2);
+  border-radius: 1px;
+  transition: height 0.2s;
+}
+
+.pulling .string {
+  height: 26px;
+}
+
+/* The bead at the end of the string */
+.bead {
+  position: absolute;
+  top: calc(26px + 18px);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: top 0.2s;
+}
+
+.pulling .bead {
+  top: calc(26px + 26px);
+}
